@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Switch, Route, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { listDecks } from '../utils/api/index';
-import Deck from './Deck';
-import Study from './Study';
 
 const DeckList = () => {
   
