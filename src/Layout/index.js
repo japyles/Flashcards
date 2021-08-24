@@ -1,37 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Route, Switch, useParams } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from 'react-router-dom';
 import Header from "./Header";
 import Home from './Home';
 import NotFound from "./NotFound";
 import Deck from './Deck';
 import Study from './Study';
-import { readDeck } from '../utils/api/index';
-// import { listDecks } from '../utils/api/index';
+import NewCard from './NewCard';
 
 function Layout() {
-
-  const [deck, setDeck] = useState([]);
-  const { deckId } = useParams();
-
-  useEffect(() => {
-      const controller = new AbortController();
-      readDeck(deckId, controller.signal)
-        .then(data => {
-        setDeck(data)
-      })
-      return () => controller.abort();
-    }, [deckId]);
-
-  // const [decks, setDecks] = useState([]);
-  
-  // useEffect(() => {
-  //   const controller = new AbortController();
-  //   listDecks(controller.signal)
-  //     .then(data => {
-  //     setDecks(data)
-  //   })
-  //   return () => controller.abort();
-  // }, []);
 
   return (
     <div>
@@ -43,10 +19,13 @@ function Layout() {
             <Home />
           </Route>
           <Route exact path='/decks/:deckId'>
-            <Deck deck={deck}/>
+            <Deck />
           </Route>
           <Route path='/decks/:deckId/study'>
-            <Study deck={deck}/>
+            <Study />
+          </Route>
+          <Route path='/decks/:deckId/cards/new'>
+            <NewCard />
           </Route>
           <Route>
             <NotFound />
@@ -58,3 +37,30 @@ function Layout() {
 }
 
 export default Layout;
+
+
+
+
+
+  // const [deck, setDeck] = useState([]);
+  // const { deckId } = useParams();
+
+  // useEffect(() => {
+  //     const controller = new AbortController();
+  //     readDeck(deckId, controller.signal)
+  //       .then(data => {
+  //       setDeck(data)
+  //     })
+  //     return () => controller.abort();
+  //   }, [deckId]);
+
+  // const [decks, setDecks] = useState([]);
+  
+  // useEffect(() => {
+  //   const controller = new AbortController();
+  //   listDecks(controller.signal)
+  //     .then(data => {
+  //     setDecks(data)
+  //   })
+  //   return () => controller.abort();
+  // }, []);
