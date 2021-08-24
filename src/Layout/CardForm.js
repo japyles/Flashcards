@@ -7,7 +7,7 @@ const CardForm = ( { handleSubmit, handleChangeFront, handleChangeBack, card, de
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className='d-flex flex-column mb-3'>
                     <label className='mr-3'>Front</label>
                     <textarea 
                     name='front'
@@ -19,7 +19,7 @@ const CardForm = ( { handleSubmit, handleChangeFront, handleChangeBack, card, de
                     cols='100'
                     />
                 </div>
-                <div>
+                <div className='d-flex flex-column mb-3'>
                     <label className='mr-3'>Back</label>
                     <textarea
                     name='back'

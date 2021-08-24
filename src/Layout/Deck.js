@@ -38,12 +38,12 @@ const Deck = () => {
         <Breadcrumb.Item href="#" active>{name}</Breadcrumb.Item>
       </Breadcrumb>
       
-      <div key={id}>
+      <div key={id} className='mb-5'>
         <h3>{name}</h3>
         <p>{description}</p>
-        <Link to={`./decks/${id}/edit`} className='btn btn-secondary'>Edit</Link>
-        <Link to={`/decks/${id}/study`} className='btn btn-secondary'>Study</Link>
-        <Link to={`/decks/${id}/cards/new`} className='btn btn-secondary'>Add Card</Link>
+        <Link to={`./decks/${id}/edit`} className='btn btn-secondary mr-2'>Edit</Link>
+        <Link to={`/decks/${id}/study`} className='btn btn-secondary mr-2'>Study</Link>
+        <Link to={`/decks/${id}/cards/new`} className='btn btn-secondary mr-2'>Add Card</Link>
         <button onClick={() => deleteDeckHandler} className='btn btn-secondary'>Delete</button>
       </div>
 
