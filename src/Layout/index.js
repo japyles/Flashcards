@@ -6,6 +6,7 @@ import NotFound from "./NotFound";
 import Deck from './Deck';
 import Study from './Study';
 import NewCard from './NewCard';
+import NewDeck from './NewDeck';
 
 function Layout() {
 
@@ -13,19 +14,21 @@ function Layout() {
     <div>
       <Header />
       <div className="container">
-        {/* TODO: Implement the screen starting here */}
         <Switch>
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route exact path='/decks/:deckId'>
-            <Deck />
+          <Route path='/decks/new'>
+            <NewDeck />
           </Route>
           <Route path='/decks/:deckId/study'>
             <Study />
           </Route>
           <Route path='/decks/:deckId/cards/new'>
             <NewCard />
+          </Route>
+          <Route exact path='/decks/:deckId'>
+            <Deck />
           </Route>
           <Route>
             <NotFound />
