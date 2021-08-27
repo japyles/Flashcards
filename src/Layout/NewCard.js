@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { createCard, readDeck } from '../utils/api/index';
 import CardForm from './CardForm';
 
@@ -38,11 +37,15 @@ const NewCard = () => {
 
     return (
         <div>
-            <Breadcrumb>
-                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                <Breadcrumb.Item href="https://home/decks">DeckName</Breadcrumb.Item>
-                <Breadcrumb.Item active>Add Card</Breadcrumb.Item>
-            </Breadcrumb>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="https://home/decks">{deck.name}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Card</li>
+                </ol>
+            </nav>
+
             <h1>{deck.name}: Add Card</h1>
             <CardForm 
             handleSubmit={handleSubmit}

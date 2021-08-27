@@ -7,6 +7,8 @@ import Deck from './Deck';
 import Study from './Study';
 import NewCard from './NewCard';
 import NewDeck from './NewDeck';
+import EditDeck from './EditDeck';
+import EditCard from './EditCard';
 
 function Layout() {
 
@@ -23,6 +25,12 @@ function Layout() {
           </Route>
           <Route path='/decks/:deckId/study'>
             <Study />
+          </Route>
+          <Route path='/decks/:deckId/edit'>
+            <EditDeck />
+          </Route>
+          <Route path='/decks/:deckId/cards/:cardId/edit'>
+            <EditCard />
           </Route>
           <Route path='/decks/:deckId/cards/new'>
             <NewCard />

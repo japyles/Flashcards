@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useHistory, useRouteMatch } from 'react-router-dom';
 import { readDeck, deleteDeck, deleteCard } from '../utils/api/index';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 const Deck = () => {
   
@@ -33,10 +32,13 @@ const Deck = () => {
   
   return (
     <div>
-      <Breadcrumb>
-        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="#" active>{name}</Breadcrumb.Item>
-      </Breadcrumb>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{name}</li>
+      </ol>
+    </nav>
       
       <div key={id} className='mb-5'>
         <h3>{name}</h3>

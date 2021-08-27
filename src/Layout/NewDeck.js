@@ -24,10 +24,19 @@ function NewDeck(){
                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                 <Breadcrumb.Item active>Create Deck</Breadcrumb.Item>
             </Breadcrumb>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Deck</li>
+                </ol>
+            </nav>
+
+            <h1>Create Deck</h1>
             
             <form onSubmit={handleSubmit}>
                 <div>
-                <label>Name:</label> <br />
+                <label>Name:</label>
                 <input
                 id="name"
                 type="text"
