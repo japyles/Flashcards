@@ -48,30 +48,3 @@ function Layout() {
 }
 
 export default Layout;
-
-
-
-
-
-  // const [deck, setDeck] = useState([]);
-  // const { deckId } = useParams();
-
-  // useEffect(() => {
-  //     const controller = new AbortController();
-  //     readDeck(deckId, controller.signal)
-  //       .then(data => {
-  //       setDeck(data)
-  //     })
-  //     return () => controller.abort();
-  //   }, [deckId]);
-
-  // const [decks, setDecks] = useState([]);
-  
-  // useEffect(() => {
-  //   const controller = new AbortController();
-  //   listDecks(controller.signal)
-  //     .then(data => {
-  //     setDecks(data)
-  //   })
-  //   return () => controller.abort();
-  // }, []);

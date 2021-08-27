@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import {Link, useHistory} from "react-router-dom";
 import { createDeck} from "../utils/api/index";
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
-
 
 function NewDeck(){
     const history =useHistory();
@@ -20,10 +18,6 @@ function NewDeck(){
     return (
    
         <div className="col-9 mx-auto">
-            <Breadcrumb>
-               <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                <Breadcrumb.Item active>Create Deck</Breadcrumb.Item>
-            </Breadcrumb>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -68,48 +62,3 @@ function NewDeck(){
 }
 
 export default NewDeck;
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { useHistory } from 'react-router-dom';
-// import Breadcrumb from 'react-bootstrap/Breadcrumb';
-// import DeckForm from './DeckForm';
-// import { createDeck } from '../utils/api/index';
-
-
-// const NewDeck = () => {
-
-//     const [newDeck, setNewDeck] = useState({name:'', description:''})
-//     const history = useHistory();
-
-    // useEffect(() => {
-    //     const controller = new AbortController();
-    //     createDeck(newDeck, controller.signal)
-    //       .then(data => {
-    //       createDeck(data)
-    //     })
-    //     return () => controller.abort();
-    //   }, [newDeck]);
-
-//     const submitFunction = (event) => {
-//         event.preventDefault();
-        
-//     }
-
-//     return (
-//         <div>
-//             <Breadcrumb>
-//                 <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-//                 <Breadcrumb.Item active>Create Deck</Breadcrumb.Item>
-//             </Breadcrumb>
-//             <h1>Create Deck</h1>
-//             <DeckForm submitFunction={() => submitFunction}/>
-//         </div>
-//     )
-// }
-
-// export default NewDeck;

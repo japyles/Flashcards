@@ -17,6 +17,9 @@ const DeckList = () => {
   
   return (
     <div>
+      
+      <Link to='/decks/new' className='btn btn-secondary mb-3'>Create Deck</Link>
+
       {decks.map(deck => 
         <div key={deck.id}>
           <h3>{deck.name}</h3>

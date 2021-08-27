@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { readDeck, updateDeck } from "../utils/api/index";
 
 
@@ -60,7 +60,8 @@ function EditDeck(){
                 className='mb-3'
                 />
             </div>
-            <Link to="/decks/:deckId" className="btn btn-secondary mr-3">Cancel</Link>
+            {/* <Link to="/decks/deckId" className="btn btn-secondary mr-3">Cancel</Link> */}
+            <button className='btn btn-secondary mr-2' onClick={() => history.go(-1)}>Cancel</button>
             <button type="submit" onClick={handleSubmit} className="btn btn-primary">Submit</button>
             </form>
         </div>

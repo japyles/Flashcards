@@ -43,7 +43,7 @@ const Deck = () => {
       <div key={id} className='mb-5'>
         <h3>{name}</h3>
         <p>{description}</p>
-        <Link to={`./decks/${id}/edit`} className='btn btn-secondary mr-2'>Edit</Link>
+        <Link to={`./${id}/edit`} className='btn btn-secondary mr-2'>Edit</Link>
         <Link to={`/decks/${id}/study`} className='btn btn-secondary mr-2'>Study</Link>
         <Link to={`/decks/${id}/cards/new`} className='btn btn-secondary mr-2'>Add Card</Link>
         <button onClick={() => deleteDeckHandler} className='btn btn-secondary'>Delete</button>
@@ -55,7 +55,7 @@ const Deck = () => {
           <div key={card.id}>
             <p>{card.front}</p>
             <p>{card.back}</p>
-            <Link to={`${url}/cards/${card.id}/edit`}>Edit</Link>
+            <Link to={`${url}/cards/${card.id}/edit`} className='btn btn-secondary mr-2'>Edit</Link>
             <button onClick={() => {
               if (window.confirm('Delete this card?')) {
                 deleteCard(card.id);
@@ -63,7 +63,7 @@ const Deck = () => {
               } else {
                 history.go(0);
               }
-            }}>Delete</button>
+            }} className='btn btn-secondary'>Delete</button>
           </div>
         
         )}

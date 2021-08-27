@@ -8,7 +8,7 @@ function EditDeck(){
 
     const [card, setCard] = useState({ id: 0, name:'', description:''})
     const history = useHistory();
-    const { cardId } = useParams;
+    const { cardId, deckId } = useParams;
 
     useEffect(() => {
         const controller = new AbortController();
@@ -32,6 +32,14 @@ function EditDeck(){
     return (
    
         <div className="col-9 mx-auto">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/decks/deckId">{`Deck ${deckId}`}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{`Edit Card ${cardId}`}</li>
+                </ol>
+            </nav>
 
             <h1>Edit Card</h1>
             
