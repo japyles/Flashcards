@@ -1,11 +1,11 @@
 import React from 'react';
 import DeckList from './DeckList';
 
-const Home = ({decks}) => {
+const Home = () => {
   
   return (
     <div>
-      <DeckList decks={decks}/>
+      <DeckList />
     </div>
   )
 }

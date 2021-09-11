@@ -3,14 +3,14 @@ import {Link, useHistory} from "react-router-dom";
 import { createDeck} from "../utils/api/index";
 
 function NewDeck(){
-    const history =useHistory();
+    const history = useHistory();
     const [newDeck, setNewDeck] = useState({name:"", description:""})
 
 
     const handleSubmit = (event) => {
         event.preventDefault()
         createDeck(newDeck);
-        history.push(`/decks/${event.id}`);//takes back to deck list
+        history.go(-1); //takes back to deck list
     }
     const handleChange=(event)=>{
         setNewDeck({...newDeck,[event.target.name]:event.target.value})
@@ -20,9 +20,9 @@ function NewDeck(){
         <div className="col-9 mx-auto">
 
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Create Deck</li>
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
                 </ol>
             </nav>
 
@@ -49,7 +49,7 @@ function NewDeck(){
                 name="description"
                 rows="3"
                 onChange={handleChange}
-                value={newDeck.description}
+                defaultValue={newDeck.description}
                 style={{ width: "100%" }}
                 className='mb-3'
                 />

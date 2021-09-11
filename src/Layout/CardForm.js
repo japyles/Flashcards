@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
-const CardForm = ( { handleSubmit, handleChangeFront, handleChangeBack, card, deckId }) => {
+const CardForm = ( { handleSubmit, handleChangeFront, handleChangeBack, card, deck }) => {
 
+    const { deckId } = useParams();
+    console.log(handleChangeFront)
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -11,7 +13,7 @@ const CardForm = ( { handleSubmit, handleChangeFront, handleChangeBack, card, de
                     <label className='mr-3'>Front</label>
                     <textarea 
                     name='front'
-                    value={card.front}
+                    defaultValue={card.front}
                     onChange={handleChangeFront}
                     id='front'
                     placeholder='Front side of card'
@@ -23,7 +25,7 @@ const CardForm = ( { handleSubmit, handleChangeFront, handleChangeBack, card, de
                     <label className='mr-3'>Back</label>
                     <textarea
                     name='back'
-                    value={card.back}
+                    defaultValue={card.back}
                     onChange={handleChangeBack}
                     id='back'
                     placeholder='Back side of card'
@@ -31,7 +33,7 @@ const CardForm = ( { handleSubmit, handleChangeFront, handleChangeBack, card, de
                     cols='100'
                     />
                 </div>
-                <Link to={`/decks/${deckId}`} name='cancel' className="btn btn-secondary mr-3">Done</Link>
+                <Link to={`/decks/${deckId}`} className="btn btn-secondary mr-3">Done</Link>
                 <button type='submit' className="btn btn-primary">Save</button>
             </form>
         </div>

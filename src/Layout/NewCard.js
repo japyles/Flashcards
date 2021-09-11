@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+// import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { createCard, readDeck } from '../utils/api/index';
 import CardForm from './CardForm';
 
@@ -37,21 +38,12 @@ const NewCard = () => {
 
     return (
         <div>
-
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="https://home/decks">{deck.name}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Add Card</li>
-                </ol>
-            </nav>
-
-            <h1>{deck.name}: Add Card</h1>
+          <h1><span>{deck.name}</span>: <span>Add Card</span></h1>
             <CardForm 
             handleSubmit={handleSubmit}
             card={card}
-            handleCangeFront={handleChangeFront}
-            HandleChangeBack={handleChangeBack}
+            handleChangeFront={handleChangeFront}
+            handleChangeBack={handleChangeBack}
             />
         </div>
         
